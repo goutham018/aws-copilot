@@ -1,0 +1,15 @@
+# Copilot manifest for backend (App Runner)
+name: backend
+type: Request-Driven Web Service
+image:
+  build: ../../backend/Dockerfile
+  port: 3000
+cpu: 1024
+memory: 2048
+count: 1
+environment:
+  variables:
+    DYNAMODB_TABLE: "backend-table"
+    AWS_REGION: "us-east-1"
+addons:
+  - addons/dynamodb.yml

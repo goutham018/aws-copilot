@@ -1,0 +1,12 @@
+# Copilot manifest for frontend (App Runner)
+name: frontend
+type: Request-Driven Web Service
+image:
+  build: ../../frontend/Dockerfile
+  port: 3000
+cpu: 1024
+memory: 2048
+count: 1
+environment:
+  variables:
+    VITE_API_URL: "https://REPLACE_WITH_BACKEND_URL"
